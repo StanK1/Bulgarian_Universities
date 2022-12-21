@@ -588,3 +588,38 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
+
+/*
+# Clients
+*/
+.universities {
+  padding-top: 20px;
+}
+
+.universities .swiper-slide img {
+  opacity: 0.5;
+  transition: 0.3s;
+  filter: grayscale(100);
+}
+
+.universities .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.universities .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.universities .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  background-color: #ddd;
+}
+
+.universities .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #ffc451;
+}
