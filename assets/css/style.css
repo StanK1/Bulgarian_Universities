@@ -677,3 +677,22 @@ section {
     display: inline-block;
   }
 }
+
+
+#universityList {
+  font-size: 18px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#universityList li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+}
+
+#universityList li:hover {
+  background-color: #eee;
+}

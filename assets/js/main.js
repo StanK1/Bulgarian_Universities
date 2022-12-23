@@ -228,3 +228,76 @@ new Swiper('.clients-slider', {
     }
   }
 });
+
+
+
+
+function calculate() {
+  // Get the input values
+  var a = document.getElementById("inputA").value;
+  var b = document.getElementById("inputB").value;
+  var c = document.getElementById("inputC").value;
+  var d = document.getElementById("inputD").value;
+  var e = document.getElementById("inputE").value;
+
+  // Convert the input values to numbers
+  a = Number(a);
+  b = Number(b);
+  c = Number(c);
+  d = Number(d);
+  e = Number(e);
+
+  // Check if any of the input values are outside the allowed range
+  var error = false;
+  if (a < 2 || a > 6 || b < 2 || b > 6 || c < 2 || c > 6 || d < 2 || d > 6 || e < 2 || e > 6) {
+    error = true;
+  }
+
+  // If there is an error, display the error message and return
+  if (error) {
+    document.getElementById("error").style.display = "block";
+    return;
+  }
+
+  // Get the selected
+  formula
+    var formula = document.getElementById("formulaSelect").value;
+
+    // Initialize the result variable
+    var result;
+
+    // Choose the formula based on the selected option
+    if (formula === "addition") {
+      result = a + b + c + d + e;
+    } else if (formula === "subtraction") {
+      result = a - b - c - d - e;
+    } else if (formula === "multiplication") {
+      result = a * b * c * d * e;
+    }
+
+    // Set the result in the output element and hide the error message
+    document.getElementById("output").value = result;
+    document.getElementById("error").style.display = "none";
+  }
+
+
+
+  function search() {
+    // Get the search query from the input field
+    const query = document.getElementById('search-input').value.toLowerCase();
+  
+    // Get all the university elements
+    const universities = document.querySelectorAll('.university');
+  
+    // Loop through the universities and hide those that don't match the search query
+    universities.forEach(university => {
+      if (university.textContent.toLowerCase().includes(query)) {
+        university.style.display = 'block';
+      } else {
+        university.style.display = 'none';
+      }
+    });
+  }
+
+
+
