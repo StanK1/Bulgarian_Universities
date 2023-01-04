@@ -239,6 +239,7 @@ function calculate() {
   var c = document.getElementById("inputC").value;
   var d = document.getElementById("inputD").value;
   var e = document.getElementById("inputE").value;
+  var f = document.getElementById("inputF").value;
 
   // Convert the input values to numbers
   a = Number(a);
@@ -246,10 +247,11 @@ function calculate() {
   c = Number(c);
   d = Number(d);
   e = Number(e);
+  f = Number(f);
 
   // Check if any of the input values are outside the allowed range
   var error = false;
-  if (a < 2 || a > 6 || b < 2 || b > 6 || c < 2 || c > 6 || d < 2 || d > 6 || e < 2 || e > 6) {
+  if (a < 2 || a > 6 || b < 2 || b > 6 || c < 2 || c > 6 || d < 2 || d > 6 || e < 2 || e > 6 || f < 2 || f > 6) {
     error = true;
   }
 
@@ -268,11 +270,11 @@ function calculate() {
 
     // Choose the formula based on the selected option
     if (formula === "addition") {
-      result = a + b + c + d + e;
+      result = a + b + c + d + e + f;
     } else if (formula === "subtraction") {
-      result = a - b - c - d - e;
+      result = a - b - c - d - e - f;
     } else if (formula === "multiplication") {
-      result = a * b * c * d * e;
+      result = a * b * c * d * e * f;
     }
 
     // Set the result in the output element and hide the error message
@@ -331,3 +333,39 @@ function calculate() {
     // Update
     resultLabel.innerHTML = "Result: " + selectedOption;
   }
+
+
+
+  
+
+
+
+
+
+
+
+
+  const universityData = [
+    { university: 'Sofia University', major: 'Computer Science', formula: 'y = mx + b' },
+    { university: 'Plovdiv University', major: 'Mathematics', formula: 'A = lw' },
+    { university: 'Varna Free University', major: 'Physics', formula: 'F = ma' },
+    { university: 'Technical University of Sofia', major: 'Engineering', formula: 'P = IV' },
+    { university: 'University of National and World Economy', major: 'Economics', formula: 'GDP = C + I + G + (X - M)' },
+    { university: 'Medical University of Varna', major: 'Medicine', formula: 'BMI = mass / height^2' }
+  ];
+  
+  const showFormulaButton = document.getElementById('show-formula-button');
+  const formulaContainer = document.getElementById('formula-container');
+  const universitiesSelect = document.getElementById('universities');
+  const majorsSelect = document.getElementById('majors');
+  
+  showFormulaButton.addEventListener('click', () => {
+    const selectedUniversity = universitiesSelect.value;
+    const selectedMajor = majors.value;
+    const selectedUniversityData = universityData.find(university => university.university === selectedUniversity && university.major === selectedMajor);
+    if (selectedUniversityData) {
+      formulaContainer.textContent = `Formula: ${selectedUniversityData.formula}`;
+    } else {
+      formulaContainer.textContent = 'No formula found for the selected university and major';
+    }
+  });

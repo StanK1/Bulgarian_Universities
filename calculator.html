@@ -92,22 +92,18 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Информация за балообразуването и сметни своя бал.
-        </p>
-      </div>
-    </section>
+    <section class="Calculator-page">
+
+   
 
 
 
 
-    <div class="container mt-7">
+    <div class="container mt-7 ">
       <div class="row justify-content-center">
         <div class="col-sm-10">
           <div class="card shadow">
-            <div class="card-header bg-primary text-white text-center">
+            <div class="card-header bg-primary text-bg-white text-center ">
               Калкулатор на бал
             </div>
             <div class="card-body">
@@ -126,10 +122,10 @@
                     <select class="form-control" id="textbox2">
                     </select>
                   </div>
-                  <div class="d-grid gap-2 col-6 mx-auto">
+                  <div class="d-grid gap-2 col-7 mx-auto">
                   <button type="button" class="btn btn-outline-warning btn-sm" onclick="showResult()">Show Result</button>
                   <div class="mt-3">
-                    <label id="resultLabel">Result:</label>
+                    <label id="resultLabel">Формула за балообразуване:</label>
                   </div>
                   </div>
 
@@ -143,22 +139,28 @@
                     <input type="number" class="form-control" id="inputB" min="2" max="6">
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="row">
                   <div class="form-group col-sm-6">
                     <label for="inputC">Оценка В</label>
                     <input type="number" class="form-control" id="inputC" min="2" max="6">
                   </div>
-                  
                   <div class="form-group col-sm-6">
-                    <label for="inputD">Оценка от КСИ</label>
+                    <label for="inputD">Оценка Г</label>
                     <input type="number" class="form-control" id="inputD" min="2" max="6">
                   </div>
-                </div>
-                <div class="form-row">
+                  
                   <div class="form-group col-sm-6">
                     <label for="inputE">Оценка от ДЗИ</label>
                     <input type="number" class="form-control" id="inputE" min="2" max="6">
                   </div>
+                
+                
+                  <div class="form-group col-sm-6">
+                    <label for="inputF">Оценка от КСИ (Опция)</label>
+                    <input type="number" class="form-control" id="inputF" min="2" max="6">
+                  </div>
+                </div>
+                  <div class="row">
                   <div class="form-group col-sm-6">
                     <label for="formulaSelect">Формула</label>
                     <select class="form-control" id="formulaSelect">
@@ -169,7 +171,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <button type="button" class="btn btn-primary btn-block" onclick="calculate()">Calculate</button>
+                  <button type="button" class="btn btn-primary btn-block" onclick="calculate()">Пресметни</button>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" id="output" disabled>
@@ -183,29 +185,37 @@
         </div>
       </div>
     </div>
+   <!-- <h1>University Formulas</h1>
+    <p>
+      Select a university and major to see the corresponding formula:
+    </p>
+    <label for="universities">University:</label>
+    <select id="universities">
+      <option value="Sofia University">Sofia University</option>
+      <option value="Plovdiv University">Plovdiv University</option>
+      <option value="Varna Free University">Varna Free University</option>
+      <option value="Technical University of Sofia">Technical University of Sofia</option>
+      <option value="University of National and World Economy">University of National and World Economy</option>
+      <option value="Medical University of Varna">Medical University of Varna</option>
+    </select>
+    <br>
+    <label for="majors">Major:</label>
+    <select id="majors">
+      <option value="Computer Science">Computer Science</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Physics">Physics</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Economics">Economics</option>
+      <option value="Medicine">Medicine</option>
+    </select>
+    <br>
+    <br>
+    <button id="show-formula-button">Show Formula</button>
+    <br>
+    <br>
+    <p id="formula-container" class="formula"></p>-->
 
-    <div class="container mt-6">
-      <form>
-        <div class="form-group">
-          <label for="textbox1">Text Box 1</label>
-          <select class="form-control" id="textbox1" onchange="updateTextBox2()">
-            <option>Софийски университет "Св. Климент Охридски"</option>
-            <option>Медицински университет София</option>
-            <option>Технически университет София</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="textbox2">Text Box 2</label>
-          <select class="form-control" id="textbox2">
-            <!-- Options will be added here by the updateTextBox2 function -->
-          </select>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="showResult()">Show Result</button>
-      </form>
-      <div class="mt-3">
-        <label id="resultLabel">Result:</label>
-      </div>
-    </div>
+  </section>
   </main><!-- End #main -->
 
   <!-- Vendor JS Files -->
