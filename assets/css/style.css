@@ -184,6 +184,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  
 }
 
 .navbar ul {
@@ -192,10 +193,12 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+  
 }
 
 .navbar li {
   position: relative;
+  
 }
 
 .navbar a,
@@ -204,6 +207,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
+  
   font-size: 15px;
   font-weight: 600;
   color: #fff;
@@ -226,6 +230,12 @@ h6 {
 }
 
 .navbar .dropdown ul {
+  /*
+  Will be deleted in future versions
+  */
+  font-family: 'HhenumRegular';
+   font-weight: normal;
+   font-style: normal;
   display: block;
   position: absolute;
   left: 14px;
@@ -578,7 +588,7 @@ section {
 }
 
 /*
-# Clients
+# Universities
 */
 .universities {
   padding-top: 20px;
@@ -615,7 +625,7 @@ section {
 
 
 /*
-# Breadcrumbs for other pages
+# other pages
 */
 .breadcrumbs {
   padding: 15px 0;

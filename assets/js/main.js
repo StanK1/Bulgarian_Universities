@@ -300,4 +300,34 @@ function calculate() {
   }
 
 
+// Callculator drop boxes
+  function updateTextBox2() {
+    var textbox1 = document.getElementById("textbox1");
+    var textbox2 = document.getElementById("textbox2");
 
+    // Clear the options of the second drop-down menu
+    textbox2.innerHTML = "";
+
+    // Get the selected option of the first drop-down menu
+    var selectedOption = textbox1.options[textbox1.selectedIndex].text;
+
+    // Add the appropriate options to the second drop-down menu based on the selection in the first drop-down menu
+    if (selectedOption == "Софийски университет \"Св. Климент Охридски\"") {
+      textbox2.innerHTML += "<option>Философия</option><option>Психология</option><option>Социология</option><option>Политология</option><option>Публична администрация</option><option>Културология</option><option>Библиотечно-информационни науки</option><option>Европеистика</option><option>Публични информационни системи</option><option>Философия (на английски език)</option>";
+    } else if (selectedOption == "Медицински университет София") {
+      textbox2.innerHTML += "<option>Option 4</option><option>Option 5</option><option>Option 6</option>";
+    } else if (selectedOption == "Технически университет София") {
+      textbox2.innerHTML += "<option>Option 7</option><option>Option 8</option><option>Option 9</option>";
+    }
+  }
+
+  function showResult() {
+    var textbox2 = document.getElementById("textbox2");
+    var resultLabel = document.getElementById("resultLabel");
+
+    // Get the selected option of the second drop-down menu
+    var selectedOption = textbox2.options[textbox2.selectedIndex].text;
+
+    // Update
+    resultLabel.innerHTML = "Result: " + selectedOption;
+  }
