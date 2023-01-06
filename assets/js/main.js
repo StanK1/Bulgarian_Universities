@@ -275,6 +275,8 @@ function calculate() {
       result = a - b - c - d - e - f;
     } else if (formula === "multiplication") {
       result = a * b * c * d * e * f;
+    } else if (formula === "delenie") {
+      result = a / b / c / d / e / f;
     }
 
     // Set the result in the output element and hide the error message

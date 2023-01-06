@@ -178,8 +178,6 @@ h6 {
 
 /*
 # Navigation Menu
-*/
-/**
 * Desktop
 */
 .navbar {
@@ -236,6 +234,7 @@ h6 {
   font-family: 'HhenumRegular';
    font-weight: normal;
    font-style: normal;
+   /*  ----        ---     ---   */
   display: block;
   position: absolute;
   left: 14px;
