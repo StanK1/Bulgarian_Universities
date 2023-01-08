@@ -230,6 +230,92 @@ new Swiper('.clients-slider', {
 });
 
 
+window.addEventListener('load', () => {
+  let galeryContainer = select('.galery-container');
+  if (galeryContainer) {
+    let galeryIsotope = new Isotope(galeryContainer, {
+      itemSelector: '.galery-item'
+    });
+
+    let galeryFilters = select('#galery-flters li', true);
+
+    on('click', '#galery-flters li', function(e) {
+      e.preventDefault();
+      galeryFilters.forEach(function(el) {
+        el.classList.remove('filter-active');
+      });
+      this.classList.add('filter-active');
+
+      galeryIsotope.arrange({
+        filter: this.getAttribute('data-filter')
+      });
+      galeryIsotope.on('arrangeComplete', function() {
+        AOS.refresh()
+      });
+    }, true);
+  }
+
+});
+
+/**
+ * Initiate galery lightbox 
+ */
+const galeryLightbox = GLightbox({
+  selector: '.galery-lightbox'
+});
+
+/**
+ * galery details slider
+ */
+new Swiper('.galery-details-slider', {
+  speed: 400,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
+/**
+   * Testimonials slider
+   */
+new Swiper('.testimonials-slider', {
+  speed: 600,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  slidesPerView: 'auto',
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
+
+/**
+ * Animation on scroll
+ */
+window.addEventListener('load', () => {
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false
+  });
+});
+
+/**
+ * Initiate Pure Counter 
+ */
+new PureCounter();
+
+
 
 
 function calculate() {
