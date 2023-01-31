@@ -231,43 +231,30 @@ new Swiper('.clients-slider', {
 
 
 window.addEventListener('load', () => {
-  let galeryContainer = select('.galery-container');
-  if (galeryContainer) {
-    let galeryIsotope = new Isotope(galeryContainer, {
-      itemSelector: '.galery-item'
+  let galleryContainer = select('.gallery-container');
+  if (galleryContainer) {
+    let galleryIsotope = new Isotope(galleryContainer, {
+      itemSelector: '.gallery-item'
     });
 
-    let galeryFilters = select('#galery-flters li', true);
-
-    on('click', '#galery-flters li', function(e) {
-      e.preventDefault();
-      galeryFilters.forEach(function(el) {
-        el.classList.remove('filter-active');
-      });
-      this.classList.add('filter-active');
-
-      galeryIsotope.arrange({
-        filter: this.getAttribute('data-filter')
-      });
-      galeryIsotope.on('arrangeComplete', function() {
-        AOS.refresh()
-      });
-    }, true);
+    
   }
 
 });
 
+
+
 /**
- * Initiate galery lightbox 
+ * Initiate gallery lightbox 
  */
-const galeryLightbox = GLightbox({
-  selector: '.galery-lightbox'
+const galleryLightbox = GLightbox({
+  selector: '.gallery-lightbox'
 });
 
 /**
- * galery details slider
+ * gallery details slider
  */
-new Swiper('.galery-details-slider', {
+new Swiper('.gallery-details-slider', {
   speed: 400,
   loop: true,
   autoplay: {
@@ -280,6 +267,9 @@ new Swiper('.galery-details-slider', {
     clickable: true
   }
 });
+
+
+
 /**
    * Testimonials slider
    */
@@ -326,6 +316,7 @@ function calculate() {
   var d = document.getElementById("inputD").value;
   var e = document.getElementById("inputE").value;
   var f = document.getElementById("inputF").value;
+  
 
   // Convert the input values to numbers
   a = Number(a);
@@ -424,6 +415,9 @@ function calculate() {
 
 
 
+
+
+
   
 
 
@@ -433,27 +427,3 @@ function calculate() {
 
 
 
-  const universityData = [
-    { university: 'Sofia University', major: 'Computer Science', formula: 'y = mx + b' },
-    { university: 'Plovdiv University', major: 'Mathematics', formula: 'A = lw' },
-    { university: 'Varna Free University', major: 'Physics', formula: 'F = ma' },
-    { university: 'Technical University of Sofia', major: 'Engineering', formula: 'P = IV' },
-    { university: 'University of National and World Economy', major: 'Economics', formula: 'GDP = C + I + G + (X - M)' },
-    { university: 'Medical University of Varna', major: 'Medicine', formula: 'BMI = mass / height^2' }
-  ];
-  
-  const showFormulaButton = document.getElementById('show-formula-button');
-  const formulaContainer = document.getElementById('formula-container');
-  const universitiesSelect = document.getElementById('universities');
-  const majorsSelect = document.getElementById('majors');
-  
-  showFormulaButton.addEventListener('click', () => {
-    const selectedUniversity = universitiesSelect.value;
-    const selectedMajor = majors.value;
-    const selectedUniversityData = universityData.find(university => university.university === selectedUniversity && university.major === selectedMajor);
-    if (selectedUniversityData) {
-      formulaContainer.textContent = `Formula: ${selectedUniversityData.formula}`;
-    } else {
-      formulaContainer.textContent = 'No formula found for the selected university and major';
-    }
-  });
