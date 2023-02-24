@@ -1,21 +1,21 @@
-# Bulgarian Universities
+# Bulgarian_Universities
 
 A comprehensive resource for students interested in pursuing higher education in Bulgaria. This website provides information on the top universities in Bulgaria, their respective majors and a brief overview of each.
 
 # Features
-- Detailed information on the top universities in Bulgaria
-- Information on the various majors offered at each university
-- Overview of each university and its facilities
-- Average point calculator for each major, based on the admission requirements of each university
-- User-friendly interface and responsive design for easy navigation on any device
+-Detailed information on the top universities in Bulgaria
+-Information on the various majors offered at each university
+-Overview of each university and its facilities
+-Average point calculator for each major, based on the admission requirements of each university
+-User-friendly interface and responsive design for easy navigation on any device
 # Technologies
 This website is built using the following technologies:
 
-- HTML
-- CSS
-- JavaScript
-- JQuery
-- Databases
+-HTML
+-CSS
+-JavaScript
+-JQuery
+-Databases
 # Usage
 Clone or download the repository
 Open index.html in your browser
