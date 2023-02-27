@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
 
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -33,7 +33,7 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/favicon.png" alt="" class="img-fluid"></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="/index.html" class="logo me-auto me-lg-0"><img src="/assets/img/favicon.png" alt="" class="img-fluid"></a></h1>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -81,18 +81,18 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <div class="col order-first">
-              <h2 id="Header-subpages">Благоевград</h2>
+              <h2 id="Header-subpages">{{ page.title }}</h2>
              <div class="col-md-4 offset-md-4" id="sublinks">
              <ol>
             <li><a href="/index.html">Начало</a></li>
-            <li>Благоевград</li>
+            <li>{{ page.title }}</li>
            </ol>
        </div>
     </div>
 </div>
       </div>
     </section><!-- End Breadcrumbs -->
-    
+    {{ content }}
     <footer id="footer">
         <div class="footer-top">
           <div class="container">
