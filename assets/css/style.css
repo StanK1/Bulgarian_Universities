@@ -1243,3 +1243,16 @@ section {
 position: relative;
   left: 50vmax;
 }
+
+.fade-animation {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
