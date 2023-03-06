@@ -81,18 +81,18 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <div class="col order-first">
-              <h2 id="Header-subpages">Русе</h2>
+              <h2 id="Header-subpages">{{ page.title }}</h2>
              <div class="col-md-4 offset-md-4" id="sublinks">
              <ol>
             <li><a href="../index.html">Начало</a></li>
-            <li>Русе</li>
+            <li>{{ page.title }}</li>
            </ol>
        </div>
     </div>
 </div>
       </div>
     </section><!-- End Breadcrumbs -->
-    
+    {{ content }}
     <footer id="footer">
         <div class="footer-top">
           <div class="container">
