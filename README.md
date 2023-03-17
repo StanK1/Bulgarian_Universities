@@ -14,7 +14,7 @@ This website is built using the following technologies:
 -HTML
 -CSS
 -JavaScript
--JQuery
+-Java
 -Databases
 # Usage
 Clone or download the repository
@@ -25,4 +25,5 @@ Use the average point calculator to determine your eligibility for admission to 
 Contributing
 If you wish to contribute to this project, please fork the repository and make the desired changes to your fork. Once you are satisfied with your changes, please open a pull request and I will review it promptly.
 # OR 
+(Only Frontend)
 Check: https://stank1.github.io/Bulgarian_Universities/
