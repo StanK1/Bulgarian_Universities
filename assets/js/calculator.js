@@ -3,8 +3,9 @@ const table2Id = "#t2";
 const table3Id = "#t3";
 const table4Id = "#t4";
 const table5Id = "#t5";
+const table6Id = "#t6";
 
-
+//calculator
 function showTable(tableId) {
     $(tableId).css('display', 'inline-block');
     // console.log(typeof(tableId));
@@ -22,7 +23,7 @@ function hideResult() {
     $('#button-result').css('display', 'none');
 }
 
-function getSpecSelectorValue() {
+function getSpecselectorValue() {
     return $('#selector').val();
 }
 
@@ -38,6 +39,8 @@ function getTableIdForSelectedSpec(option) {
             return table4Id;
         case '5':
             return table5Id;
+        case '6':
+            return table6Id;
     }
 }
 
@@ -51,13 +54,14 @@ function showCalc() {
 
     emptyInputs();
 
-    let option = getSpecSelectorValue();
+    let option = getSpecselectorValue();
 
     hideTable(table1Id);
     hideTable(table2Id);
     hideTable(table3Id);
     hideTable(table4Id);
     hideTable(table5Id);
+    hideTable(table6Id);
     hideResult();
 
 
@@ -82,12 +86,16 @@ function showCalc() {
             showTable(table5Id);
             showResult();
             break;
+        case '6':
+            showTable(table6Id);
+            showResult();
+            break;
     }
 }
 
 function getInputs() {
 
-    let option = getSpecSelectorValue();
+    let option = getSpecselectorValue();
     let data;
 
     if (option == '1') {
@@ -130,6 +138,12 @@ function getInputs() {
             group3: $(table5Id + ' .group3 input').map((_, el) => el.value).get()
         };
 
+    } else if (option == '6') {
+
+        data = {
+            group1: $(table6Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(table6Id + ' .group2 input').map((_, el) => el.value).get()
+        };
     }
 
     return data;
@@ -169,7 +183,7 @@ function areDegreesValid(inputs) {
 
         for (let i = 0; i < inputs[group].length; i++) {
             let groupEl = inputs[group][i];
-            let option = getSpecSelectorValue();
+            let option = getSpecselectorValue();
             let tableId = getTableIdForSelectedSpec(option);
             $(tableId + ' .' + group + ' input').eq(i).css('border', '1px solid #000000');
             if (!isValidDegree(groupEl)) {
@@ -217,7 +231,7 @@ function makeCalculation(inputs) {
 
     for (let group in inputs) {
 
-        let option = getSpecSelectorValue();
+        let option = getSpecselectorValue();
         if (option == '1') {
 
             if (group == 'group1') {
@@ -425,6 +439,41 @@ function makeCalculation(inputs) {
                 }
             }
 
+        }  else if (option == '6') {
+
+            if (group == 'group1') {
+
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                let groupMax = Math.max.apply(null, marks);
+                if (groupMax>=5) {
+                    finalResult = "Влизате, понеже сте получили оценка" + " " + groupMax + " на КСИ";
+                    return finalResult;
+
+                } else {
+                    
+                
+                if (isNaN(groupMax)) {
+                    finalResult += '0.00';
+                } else {
+                    finalResult += groupMax.toFixed(2);
+                    total += groupMax;
+                }
+            }
+
+            } else if (group == 'group2') {
+                
+                //sum funtion
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                let sum = marks.reduce((total, current) => total + current, 0);
+
+                if (isNaN(sum)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + sum.toFixed(2);
+                    total += sum;
+                }
+
+            }
         }
 
     }
@@ -446,3 +495,79 @@ function calc() {
         showFinalResult(result, color);
     }
 }
+//text boxes
+
+//All cities
+$("select[name='NameCity']").change(function() {
+    //Sofia
+    if ($(this).val() !== "sofia") {
+        $("select[id='UniSelector'] option[name='TUS'], select[id='UniSelector'] option[name='SU']").addClass('hidden');
+
+      
+    } else {
+        $("select[id='UniSelector'] option[name='TUS'], select[id='UniSelector'] option[name='SU']").removeClass('hidden');
+      
+    }
+    //Gabrovo
+    if ($(this).val() !== "gabrovo") {
+        $("select[id='UniSelector'] option[name='TUG']").addClass('hidden');
+
+      
+    } else {
+        $("select[id='UniSelector'] option[name='TUG']").removeClass('hidden');
+      
+    }
+    //Veliko Tarnovo
+    if ($(this).val() !== "veliko-tarnovo") {
+        $("select[id='UniSelector'] option[name='VU']").addClass('hidden');
+
+      
+    } else {
+        $("select[id='UniSelector'] option[name='VU']").removeClass('hidden');
+      
+    }
+
+    //Varna
+    if ($(this).val() !== "varna") {
+        $("select[id='UniSelector'] option[name='IUV']").addClass('hidden');
+
+      
+    } else {
+        $("select[id='UniSelector'] option[name='IUV']").removeClass('hidden');
+      
+    }
+    // Да добавя и още градове
+  });
+
+
+//Технически Универстет София
+$("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "TUS") {
+      $("select[id='selector'] option[name='TUS']").addClass('hidden');
+      hideTable(table1Id);
+      hideTable(table2Id);
+      hideTable(table3Id);
+      hideTable(table4Id);
+      hideTable(table5Id);
+      hideTable(table6Id);
+    } else {
+      $("select[id='selector'] option[name='TUS']").removeClass('hidden');
+      
+    }
+  });
+
+  //Варненски Икономически Университет
+  $("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "IUV") {
+      $("select[id='selector'] option[name='IUV']").addClass('hidden');
+      hideTable(table1Id);
+      hideTable(table2Id);
+      hideTable(table3Id);
+      hideTable(table4Id);
+      hideTable(table5Id);
+      hideTable(table6Id);
+    } else {
+      $("select[id='selector'] option[name='IUV']").removeClass('hidden');
+      
+    }
+  });

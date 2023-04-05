@@ -5,10 +5,14 @@ title: Калкулатор за състезателен бал
 ---
 
 <style>
+    td{
+        text-align: left;
+    }
 
   td input {
         float: right;
         margin-left: 10px;
+ 
     }
 
     table {
@@ -97,6 +101,10 @@ title: Калкулатор за състезателен бал
   min-height: 100vh;
 }
 
+.hidden {
+  display: none;
+}
+
 </style>
     <section class="Calculator-page">
       <div class="container-fluid px-1 py-5 mx-auto">
@@ -115,21 +123,26 @@ title: Калкулатор за състезателен бал
                 
                 <div class="row g-3">
                   <div class="col-md-6 ">
-                    <label for="textbox1">Град:</label>
-                    <select class="form-control" id="textbox1" onchange="updateTextBox2()">
+                    <label>Град</label>
+                    <select class="form-control" id="first" name="NameCity">
                       <option value="" selected="" disabled="" hidden="">-- Изберете град --</option>
-                      <option>София</option>
-                      <option>Велико Търново</option>
-                      <option>Габрово</option>
+                      <option value="sofia">София</option>
+                      <option value="veliko-tarnovo">Велико Търново</option>
+                      <option value="gabrovo">Габрово</option>
+                      <option value="varna">Варна</option>
+                
                     </select>
                   </div>
                   <div class="col-md-6 ">
-                    <label for="textbox1">Университет:</label>
-                    <select class="form-control" id="textbox1" onchange="updateTextBox2()">
-                      <option value="" selected="" disabled="" hidden="">-- Изберете университет --</option>
-                      <option>Софийски университет "Св. Климент Охридски"</option>
-                      <option>Медицински университет София</option>
-                      <option>Технически университет София</option>
+                    <label>Университет</label>
+                    <select class="form-control" id="UniSelector" name="NameUni" >
+                        <option value="" selected="" disabled="" hidden="">-- Изберете Университет --</option>
+                        <option name="SU" value="SU">Софийски университет 'Св. Климент Охридски'</option>
+                        <option name="TUS" value="TUS">Технически университет София</option>
+                        <option name="TUG" value="TUG">Технически университет Габрово</option>
+                        <option name="VU" value="VU">Великотърновски университет „Свети свети Кирил и Методий"</option>
+                        <option name="IUV" value="IUV">Икономически университет – Варна</option>
+
                     </select>
                   </div>
 
@@ -139,47 +152,75 @@ title: Калкулатор за състезателен бал
                   <div id="calculator" data-summari-content-root="true">
                     <div class="col-md-12 ">
                     <div style="display: block;">
-                      <label for="textbox2">Специалност:</label>
+                      <label>Специалност:</label>
                         <select class="form-control" id="selector" onchange="showCalc();">
                             <option value="" selected="" disabled="" hidden="">-- Изберете специалност --</option>
-                            <option value="1">Авиационна техника и технологии</option>
-                            <option value="1">Автоматика, информационна и управляваща техника</option>
-                            <option value="1">Автомобилна електроника</option>
-                            <option value="5">Анализ на данни</option>
-                            <option value="1">Възобновяеми енергийни технологии и флуидна техника</option>
-                            <option value="1">Дигитални индустриални технологии</option>
-                            <option value="1">Дизайн и технологии за облекло и текстил</option>
-                            <option value="1">Електроенергетика и електрообзавеждане</option>
-                            <option value="1">Електроинженерство (на френски език) - 5-годишен курс за ОКС „магистър” след средно
-                                образование. </option>
-                            <option value="1">Електронни информационни системи</option>
-                            <option value="1">Електротехника</option>
-                            <option value="1">Индустриален мениджмънт</option>
-                            <option value="1">Индустриално инженерство (на английски език)</option>
-                            <option value="2">Инженерен дизайн</option>
-                            <option value="1">Инженерна логистика</option>
-                            <option value="4">Интелигентни системи и изкуствен интелект (на български език)</option>
-                            <option value="4">Интелигентни системи и изкуствен интелект (на английски език)</option>
-                            <option value="1">Информатика и софтуерни науки</option>
-                            <option value="1">Информационни технологии в индустрията</option>
-                            <option value="4">Киберсигурност</option>
-                            <option value="1">Компютърни системи и технологии (на немски език)</option>
-                            <option value="4">Компютърно и софтуерно инженерство</option>
-                            <option value="1">Компютърно проектиране и технологии в машиностроенето</option>
-                            <option value="1">Мениджмънт и бизнес информационни системи</option>
-                            <option value="1">Машиностроене</option>
-                            <option value="1">Мехатроника</option>
-                            <option value="1">Мехатроника и информационна техника (на немски език)</option>
-                            <option value="1">Педагогика на обучението по математика, физика и информатика</option>
-                            <option value="4">Приложна математика и информатика</option>
-                            <option value="1">Приложна физика и компютърно моделиране</option>
-                            <option value="1">Стопанска информатика (на немски език)</option>
-                            <option value="3">Стопанско управление</option>
-                            <option value="1">Телекомуникации</option>
-                            <option value="1">Технология и управление на транспорта</option>
-                            <option value="1">Топлинни и хладилни технологии и системи</option>
-                            <option value="1">Топлоенергетика и ядрена енергетика</option>
-                            <option value="1">Транспортна техника и технологии</option>
+                            <option name="TUS" value="1">Авиационна техника и технологии</option>
+                            <option name="TUS" value="1">Автоматика, информационна и управляваща техника</option>
+                            <option name="TUS"value="1">Автомобилна електроника</option>
+                            <option name="TUS" value="5">Анализ на данни</option>
+                            <option name="TUS" value="1">Възобновяеми енергийни технологии и флуидна техника</option>
+                            <option name="TUS" value="1">Дигитални индустриални технологии</option>
+                            <option name="TUS" value="1">Дизайн и технологии за облекло и текстил</option>
+                            <option name="TUS" value="1">Електроенергетика и електрообзавеждане</option>
+                            <option name="TUS" value="1">Електроинженерство (на френски език) - 5-годишен курс за ОКС „магистър” след средно образование. </option>
+                            <option name="TUS" value="1">Електронни информационни системи</option>
+                            <option name="TUS" value="1">Електротехника</option>
+                            <option name="TUS" value="1">Индустриален мениджмънт</option>
+                            <option name="TUS" value="1">Индустриално инженерство (на английски език)</option>
+                            <option name="TUS" value="2">Инженерен дизайн</option>
+                            <option name="TUS" value="1">Инженерна логистика</option>
+                            <option name="TUS" value="4">Интелигентни системи и изкуствен интелект (на български език)</option>
+                            <option name="TUS" value="4">Интелигентни системи и изкуствен интелект (на английски език)</option>
+                            <option name="TUS" value="1">Информатика и софтуерни науки</option>
+                            <option name="TUS" value="1">Информационни технологии в индустрията</option>
+                            <option name="TUS" value="4">Киберсигурност</option>
+                            <option name="TUS" value="1">Компютърни системи и технологии (на немски език)</option>
+                            <option name="TUS" value="4">Компютърно и софтуерно инженерство</option>
+                            <option name="TUS" value="1">Компютърно проектиране и технологии в машиностроенето</option>
+                            <option name="TUS" value="1">Мениджмънт и бизнес информационни системи</option>
+                            <option name="TUS" value="1">Машиностроене</option>
+                            <option name="TUS" value="1">Мехатроника</option>
+                            <option name="TUS" value="1">Мехатроника и информационна техника (на немски език)</option>
+                            <option name="TUS" value="1">Педагогика на обучението по математика, физика и информатика</option>
+                            <option name="TUS" value="4">Приложна математика и информатика</option>
+                            <option name="TUS" value="1">Приложна физика и компютърно моделиране</option>
+                            <option name="TUS" value="1">Стопанска информатика (на немски език)</option>
+                            <option name="TUS" value="3">Стопанско управление</option>
+                            <option name="TUS" value="1">Телекомуникации</option>
+                            <option name="TUS" value="1">Технология и управление на транспорта</option>
+                            <option name="TUS" value="1">Топлинни и хладилни технологии и системи</option>
+                            <option name="TUS" value="1">Топлоенергетика и ядрена енергетика</option>
+                            <option name="TUS" value="1">Транспортна техника и технологии</option>
+
+
+                            <option name="IUV" value="6">Счетоводство и одит</option>
+                            <option name="IUV" value="6">Счетоводство и финанси</option>
+                            <option name="IUV" value="6">Счетоводство (с преподаване на английски език)</option>
+                            <option name="IUV" value="6">Финанси</option>
+                            <option name="IUV" value="6">Аграрен бизнес</option>
+                            <option name="IUV" value="6">Бизнес икономика</option>
+                            <option name="IUV" value="6">Недвижими имоти и инвестиции</option>
+                            <option name="IUV" value="6">Предприемачество и инвестиционен мениджмънт</option>
+                            <option name="IUV" value="6">Икономика и търговия</option>
+                            <option name="IUV" value="6">Индустриален бизнес и предприемачество</option>
+                            <option name="IUV" value="6">Логистика</option>
+                            <option name="IUV" value="6">Стокознание и митническа дейност</option>
+                            <option name="IUV" value="6">Международни икономически отношения</option>
+                            <option name="IUV" value="6">Маркетинг</option>
+                            <option name="IUV" value="6">Социална сигурност и застраховане</option>
+                            <option name="IUV" value="6">Дигитални медии и ПР</option>
+                            <option name="IUV" value="6">Международен бизнес (с преподаване на английски език)</option>
+                            <option name="IUV" value="6">Бизнес и мениджмънт (с преподаване на английски език)</option>
+                            <option name="IUV" value="6">Дигитални технологии в бизнеса</option>
+                            <option name="IUV" value="6">Мениджмънт</option>
+                            <option name="IUV" value="6">Публична администрация</option>
+                            <option name="IUV" value="6">Съдебна администрация</option>
+                            <option name="IUV" value="6">Туризъм</option>
+                            <option name="IUV" value="6">Международен туризъм (с преподаване на руски език)</option>
+                            <option name="IUV" value="6">Информатика и компютърни науки</option>
+                            <option name="IUV" value="6">Мобилни и уеб технологии</option>
+                            <option name="IUV" value="6">Data Science</option>
                         </select>
                     </div>
 
@@ -381,8 +422,42 @@ title: Калкулатор за състезателен бал
                                     </td>
                                 </tr>
                             </tbody>
-                
-                        </table>
+                            </table>
+<!--note-->
+                            <table class="table table-striped table-bordered" id="t6" style="display: none;">
+                                <thead>
+                                    <tr>
+                                        <th>Получили оценка на електронен <br>кандидатстудентски изпит (тест)<br> по избор от:</th>
+                                        <th>Оценка (от справката с оценките от 11 клас)<br> попълнете всички полета*</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="group1"><span>Бълг. език и<br> литература:</span><input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        <td class="group2"><span>Средния успех:</span><input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="group1"><span class="bolded">или</span> География на <br> България:</span><input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        <td class="group2"><span>Оценка по български език<br> и литература:</span><input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="group1"><span class="bolded">или</span> Математика:<input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        <td class="group2"><span>Оценка по математика:</span><input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        
+                                        <td class="group1"><span class="bolded">или</span> Икономика:<input type="text" size="3" maxlength="4" style="border: 1px solid rgb(0, 0, 0);"></td>
+                                        <td></td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
                         
 
                             
@@ -403,5 +478,6 @@ title: Калкулатор за състезателен бал
 
   </section>
   </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="assets/js/calculator.js"></script>
