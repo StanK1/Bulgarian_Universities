@@ -307,60 +307,10 @@ new PureCounter();
 
 
 
+//calculator
 
-function calculate() {
-  // Get the input values
-  var a = document.getElementById("inputA").value;
-  var b = document.getElementById("inputB").value;
-  var c = document.getElementById("inputC").value;
-  var d = document.getElementById("inputD").value;
-  var e = document.getElementById("inputE").value;
-  var f = document.getElementById("inputF").value;
-  
 
-  // Convert the input values to numbers
-  a = Number(a);
-  b = Number(b);
-  c = Number(c);
-  d = Number(d);
-  e = Number(e);
-  f = Number(f);
-
-  // Check if any of the input values are outside the allowed range
-  var error = false;
-  if (a < 2 || a > 6 || b < 2 || b > 6 || c < 2 || c > 6 || d < 2 || d > 6 || e < 2 || e > 6 || f < 2 || f > 6) {
-    error = true;
-  }
-
-  // If there is an error, display the error message and return
-  if (error) {
-    document.getElementById("error").style.display = "block";
-    return;
-  }
-
-  // Get the selected
-  formula
-    var formula = document.getElementById("formulaSelect").value;
-
-    // Initialize the result variable
-    var result;
-
-    // Choose the formula based on the selected option
-    if (formula === "addition") {
-      result = a + b + c + d + e + f;
-    } else if (formula === "subtraction") {
-      result = a - b - c - d - e - f;
-    } else if (formula === "multiplication") {
-      result = a * b * c * d * e * f;
-    } else if (formula === "delenie") {
-      result = a / b / c / d / e / f;
-    }
-
-    // Set the result in the output element and hide the error message
-    document.getElementById("output").value = result;
-    document.getElementById("error").style.display = "none";
-  }
-
+/** 
 
 
   function search() {
@@ -383,14 +333,14 @@ function calculate() {
 
 // Callculator drop boxes
   function updateTextBox2() {
-    var textbox1 = document.getElementById("textbox1");
-    var textbox2 = document.getElementById("textbox2");
+    let textbox1 = document.getElementById("textbox1");
+    let textbox2 = document.getElementById("textbox2");
 
     // Clear the options of the second drop-down menu
     textbox2.innerHTML = "";
 
     // Get the selected option of the first drop-down menu
-    var selectedOption = textbox1.options[textbox1.selectedIndex].text;
+    let selectedOption = textbox1.options[textbox1.selectedIndex].text;
 
     // Add the appropriate options to the second drop-down menu based on the selection in the first drop-down menu
     if (selectedOption == "Софийски университет \"Св. Климент Охридски\"") {
@@ -403,27 +353,14 @@ function calculate() {
   }
 
   function showResult() {
-    var textbox2 = document.getElementById("textbox2");
-    var resultLabel = document.getElementById("resultLabel");
+    let textbox2 = document.getElementById("textbox2");
+    let resultLabel = document.getElementById("resultLabel");
 
     // Get the selected option of the second drop-down menu
-    var selectedOption = textbox2.options[textbox2.selectedIndex].text;
+    
+    let selectedOption = textbox2.options[textbox2.selectedIndex].text;
 
     // Update
     resultLabel.innerHTML = "Result: " + selectedOption;
   }
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
+*/
