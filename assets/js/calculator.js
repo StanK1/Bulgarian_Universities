@@ -1,14 +1,18 @@
-const table1Id = "#t1";
-const table2Id = "#t2";
-const table3Id = "#t3";
-const table4Id = "#t4";
-const table5Id = "#t5";
-const table6Id = "#t6";
+const tableTUS1Id = "#tTUS1";
+const tableTUS2Id = "#tTUS2";
+const tableTUS3Id = "#tTUS3";
+const tableTUS4Id = "#tTUS4";
+const tableTUS5Id = "#tTUS5";
+const tableIUVId = "#tIUV";
+const tableTUG1Id = "#tTUG1";
+const tableTUG2Id = "#tTUG2";
+const tableMUPId = "#tMUP";
+//---------------------------------------------
+const MUPprom = "#MUPprom";
 
 //calculator
 function showTable(tableId) {
     $(tableId).css('display', 'inline-block');
-    // console.log(typeof(tableId));
 }
 
 function hideTable(tableId) {
@@ -29,18 +33,24 @@ function getSpecselectorValue() {
 
 function getTableIdForSelectedSpec(option) {
     switch (option) {
-        case '1':
-            return table1Id;
-        case '2':
-            return table2Id;
-        case '3':
-            return table3Id;
-        case '4':
-            return table4Id;
-        case '5':
-            return table5Id;
-        case '6':
-            return table6Id;
+        case 'TUS1':
+            return tableTUS1Id;
+        case 'TUS2':
+            return tableTUS2Id;
+        case 'TUS3':
+            return tableTUS3Id;
+        case 'TUS4':
+            return tableTUS4Id;
+        case 'TUS5':
+            return tableTUS5Id;
+        case 'IUV':
+            return tableIUVId;
+        case 'TUG1':
+            return tableTUG1Id;
+        case 'TUG2':
+            return tableTUG2Id;
+        case 'MUP':
+            return tableMUPId;
     }
 }
 
@@ -56,38 +66,53 @@ function showCalc() {
 
     let option = getSpecselectorValue();
 
-    hideTable(table1Id);
-    hideTable(table2Id);
-    hideTable(table3Id);
-    hideTable(table4Id);
-    hideTable(table5Id);
-    hideTable(table6Id);
+    hideTable(tableTUS1Id);
+    hideTable(tableTUS2Id);
+    hideTable(tableTUS3Id);
+    hideTable(tableTUS4Id);
+    hideTable(tableTUS5Id);
+    hideTable(tableIUVId);
+    hideTable(tableTUG1Id);
+    hideTable(tableTUG2Id);
+    hideTable(tableMUPId);
     hideResult();
 
 
     switch (option) {
-        case '1':
-            showTable(table1Id);
+        case 'TUS1':
+            showTable(tableTUS1Id);
             showResult();
             break;
-        case '2':
-            showTable(table2Id);
+        case 'TUS2':
+            showTable(tableTUS2Id);
             showResult();
             break;
-        case '3':
-            showTable(table3Id);
+        case 'TUS3':
+            showTable(tableTUS3Id);
             showResult();
             break;
-        case '4':
-            showTable(table4Id);
+        case 'TUS4':
+            showTable(tableTUS4Id);
             showResult();
             break;
-        case '5':
-            showTable(table5Id);
+        case 'TUS5':
+            showTable(tableTUS5Id);
             showResult();
             break;
-        case '6':
-            showTable(table6Id);
+        case 'IUV':
+            showTable(tableIUVId);
+            showResult();
+            break;
+        case 'TUG1':
+            showTable(tableTUG1Id);
+            showResult();
+            break;
+        case 'TUG2':
+            showTable(tableTUG2Id);
+            showResult();
+            break;
+        case 'MUP':
+            showTable(tableMUPId);
             showResult();
             break;
     }
@@ -98,52 +123,85 @@ function getInputs() {
     let option = getSpecselectorValue();
     let data;
 
-    if (option == '1') {
+    if (option == 'TUS1') {
 
         data = {
-            group1: $(table1Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table1Id + ' .group2 input').map((_, el) => el.value).get(),
-            group3: $(table1Id + ' .group3 input').map((_, el) => el.value).get()
+            group1: $(tableTUS1Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUS1Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUS1Id + ' .group3 input').map((_, el) => el.value).get()
         };
-
-    } else if (option == '2') {
+        return data;
+    } 
+    if (option == 'TUS2') {
 
         data = {
-            group1: $(table2Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table2Id + ' .group2 input').map((_, el) => el.value).get(),
-            group3: $(table2Id + ' .group3 input').map((_, el) => el.value).get()
+            group1: $(tableTUS2Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUS2Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUS2Id + ' .group3 input').map((_, el) => el.value).get()
         };
-
-    } else if (option == '3') {
+        return data;
+    }
+    if (option == 'TUS3') {
 
         data = {
-            group1: $(table3Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table3Id + ' .group2 input').map((_, el) => el.value).get(),
-            group3: $(table3Id + ' .group3 input').map((_, el) => el.value).get()
+            group1: $(tableTUS3Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUS3Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUS3Id + ' .group3 input').map((_, el) => el.value).get()
         };
-
-    } else if (option == '4') {
+        return data;
+    }
+    if (option == 'TUS4') {
 
         data = {
-            group1: $(table4Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table4Id + ' .group2 input').map((_, el) => el.value).get(),
-            group3: $(table4Id + ' .group3 input').map((_, el) => el.value).get()
+            group1: $(tableTUS4Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUS4Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUS4Id + ' .group3 input').map((_, el) => el.value).get()
         };
-
-    } else if (option == '5') {
+        return data;
+    }
+    if (option == 'TUS5') {
 
         data = {
-            group1: $(table5Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table5Id + ' .group2 input').map((_, el) => el.value).get(),
-            group3: $(table5Id + ' .group3 input').map((_, el) => el.value).get()
+            group1: $(tableTUS5Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUS5Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUS5Id + ' .group3 input').map((_, el) => el.value).get()
         };
-
-    } else if (option == '6') {
+        return data;
+    }
+    if (option == 'IUV') {
 
         data = {
-            group1: $(table6Id + ' .group1 input').map((_, el) => el.value).get(),
-            group2: $(table6Id + ' .group2 input').map((_, el) => el.value).get()
+            group1: $(tableIUVId + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableIUVId + ' .group2 input').map((_, el) => el.value).get()
         };
+        return data;
+    }
+    if (option == 'TUG1') {
+
+        data = {
+            group1: $(tableTUG1Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUG1Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUG1Id + ' .group3 input').map((_, el) => el.value).get()
+        };
+        return data;
+    }
+    if (option == 'TUG2') {
+
+        data = {
+            group1: $(tableTUG2Id + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableTUG2Id + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableTUG2Id + ' .group3 input').map((_, el) => el.value).get()
+        };
+        return data;
+    }
+    if (option == 'MUP') {
+
+        data = {
+            group1: $(tableMUPId + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableMUPId + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableMUPId + ' .group3 input').map((_, el) => el.value).get()
+        };
+        return data;
     }
 
     return data;
@@ -232,7 +290,8 @@ function makeCalculation(inputs) {
     for (let group in inputs) {
 
         let option = getSpecselectorValue();
-        if (option == '1') {
+        switch (option) {
+            case 'TUS1':{
 
             if (group == 'group1') {
 
@@ -276,8 +335,9 @@ function makeCalculation(inputs) {
                 }
 
             }
-
-        } else if (option == '2') {
+            break;
+        }
+        case 'TUS2': {
 
             if (group == 'group1') {
 
@@ -315,8 +375,9 @@ function makeCalculation(inputs) {
                 });
 
             }
-
-        } else if (option == '3') {
+            break;
+        }
+        case 'TUS3': {
 
             if (group == 'group1') {
 
@@ -356,49 +417,9 @@ function makeCalculation(inputs) {
                     total += groupMax;
                 }
             }
-
-        } else if (option == '4') {
-
-            if (group == 'group1') {
-
-                let mark = parseFloat(inputs[group][0]);
-                if (isNaN(mark)) {
-                    finalResult += '0.00';
-                } else {
-                    finalResult += mark.toFixed(2);
-                    total += mark;
-                }
-
-            } else if (group == 'group2') {
-
-                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
-                let groupMax = Math.max.apply(null, marks);
-
-                if (isNaN(groupMax)) {
-                    finalResult += ' + 0.00';
-                } else {
-                    finalResult += ' + ' + groupMax.toFixed(2);
-                    total += groupMax;
-                }
-
-            } else if (group == 'group3') {
-                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
-                marks.forEach((element, index) => {
-                    if (!isNaN(element)) {
-                        marks[index] = element * 3;
-                    }
-                });
-                let groupMax = Math.max.apply(null, marks);
-
-                if (isNaN(groupMax)) {
-                    finalResult += ' + 0.00';
-                } else {
-                    finalResult += ' + ' + groupMax.toFixed(2);
-                    total += groupMax;
-                }
-            }
-
-        } else if (option == '5') {
+            break;
+        } 
+        case 'TUS4': {
 
             if (group == 'group1') {
 
@@ -438,9 +459,51 @@ function makeCalculation(inputs) {
                     total += groupMax;
                 }
             }
+            break;
+        }
+         case 'TUS5': {
+            if (group == 'group1') {
 
-        }  else if (option == '6') {
+                let mark = parseFloat(inputs[group][0]);
+                if (isNaN(mark)) {
+                    finalResult += '0.00';
+                } else {
+                    finalResult += mark.toFixed(2);
+                    total += mark;
+                }
 
+            } else if (group == 'group2') {
+
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                let groupMax = Math.max.apply(null, marks);
+
+                if (isNaN(groupMax)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + groupMax.toFixed(2);
+                    total += groupMax;
+                }
+
+            } else if (group == 'group3') {
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                marks.forEach((element, index) => {
+                    if (!isNaN(element)) {
+                        marks[index] = element * 3;
+                    }
+                });
+                let groupMax = Math.max.apply(null, marks);
+
+                if (isNaN(groupMax)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + groupMax.toFixed(2);
+                    total += groupMax;
+                }
+            }
+            break;
+
+        }
+        case 'IUV': {
             if (group == 'group1') {
 
                 let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
@@ -474,6 +537,137 @@ function makeCalculation(inputs) {
                 }
 
             }
+            break;
+        }
+        case 'TUG1': {
+
+            if (group == 'group1') {
+
+                let mark = parseFloat(inputs[group][0]);
+                if (isNaN(mark)) {
+                    finalResult += '0.00';
+                } else {
+                    finalResult += mark.toFixed(2);
+                    total += mark;
+                }
+
+            } else if (group == 'group2') {
+
+                let mark = parseFloat(inputs[group][0]);
+                if (isNaN(mark)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + mark.toFixed(2);
+                    total += mark;
+                }
+
+            } else if (group == 'group3') {
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                marks.forEach((element, index) => {
+                    if (index == 0 && !isNaN(element)) {
+                        marks[index] = element * 2;
+                    } else if (index > 0 && !isNaN(element)) {
+                        marks[index] = element * 2;
+                    }
+                });
+                let groupMax = Math.max.apply(null, marks);
+
+                if (isNaN(groupMax)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + groupMax.toFixed(2);
+                    total += groupMax;
+                }
+            }
+            break;
+        }
+        case 'TUG2': {
+
+            if (group == 'group1') {
+
+                let mark = parseFloat(inputs[group][0]);
+                if (isNaN(mark)) {
+                    finalResult += '0.00';
+                } else {
+                    finalResult += mark.toFixed(2);
+                    total += mark;
+                }
+
+            } else if (group == 'group2') {
+
+                let mark = parseFloat(inputs[group][0]);
+                if (isNaN(mark)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + mark.toFixed(2);
+                    total += mark;
+                }
+
+            } else if (group == 'group3') {
+                let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                marks.forEach((element, index) => {
+                    if (index == 0 && !isNaN(element)) {
+                        marks[index] = element * 2;
+                    } else if (index > 0 && !isNaN(element)) {
+                        marks[index] = element * 2;
+                    }
+                });
+                let groupMax = Math.max.apply(null, marks);
+
+                if (isNaN(groupMax)) {
+                    finalResult += ' + 0.00';
+                } else {
+                    finalResult += ' + ' + groupMax.toFixed(2);
+                    total += groupMax;
+                }
+            }
+            break;
+         }
+         case 'MUP': {
+
+                if (group == 'group1') {
+
+                    let mark = parseFloat(inputs[group][0]);
+                    if (isNaN(mark)) {
+                        finalResult += '0.00';
+                    } else {
+                        finalResult += mark.toFixed(2);
+                        total += mark;
+                    }
+    
+                } else if (group == 'group2') {
+                    let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                    marks.forEach((element, index) => {
+                        if (index == 0 && !isNaN(element)) {
+                            marks[index] = element * 3;
+                        }
+                    });
+                    let groupMax = Math.max.apply(null, marks);
+    
+                    if (isNaN(groupMax)) {
+                        finalResult += ' + 0.00';
+                    } else {
+                        finalResult += ' + ' + groupMax.toFixed(2);
+                        total += groupMax;
+                    }
+                } else if (group == 'group3') {
+                    let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                    marks.forEach((element, index) => {
+                        if (index == 0 && !isNaN(element)) {
+                            marks[index] = element * 3;
+                        }
+                    });
+                    let groupMax = Math.max.apply(null, marks);
+    
+                    if (isNaN(groupMax)) {
+                        finalResult += ' + 0.00';
+                    } else {
+                        finalResult += ' + ' + groupMax.toFixed(2);
+                        total += groupMax;
+                    }
+                }
+                break;
+            }
         }
 
     }
@@ -495,6 +689,19 @@ function calc() {
         showFinalResult(result, color);
     }
 }
+// Тази част от кода проверява дали си добър кандидат или не
+let finalMan = 'Мъже - ';
+let finalWoman = 'Жени - ';
+    let total = 0;
+    function compareNumbers() {
+
+        document.getElementById('Man').textContent = ` is greater than .`;
+        return finalMan;
+
+    }
+
+
+
 //text boxes
 
 //All cities
@@ -536,20 +743,38 @@ $("select[name='NameCity']").change(function() {
         $("select[id='UniSelector'] option[name='IUV']").removeClass('hidden');
       
     }
+
+    //Pleven
+    if ($(this).val() !== "pleven") {
+        $("select[id='UniSelector'] option[name='MUP']").addClass('hidden');
+
+      
+    } else {
+        $("select[id='UniSelector'] option[name='MUP']").removeClass('hidden');
+      
+    }
     // Да добавя и още градове
   });
+
+  function hideTableFinal(){
+    hideTable(tableTUS1Id);
+      hideTable(tableTUS2Id);
+      hideTable(tableTUS3Id);
+      hideTable(tableTUS4Id);
+      hideTable(tableTUS5Id);
+      hideTable(tableIUVId);
+      hideTable(tableTUG1Id);
+      hideTable(tableTUG2Id);
+      hideTable(tableMUPId);
+  }
 
 
 //Технически Универстет София
 $("select[name='NameUni']").change(function() {
     if ($(this).val() !== "TUS") {
       $("select[id='selector'] option[name='TUS']").addClass('hidden');
-      hideTable(table1Id);
-      hideTable(table2Id);
-      hideTable(table3Id);
-      hideTable(table4Id);
-      hideTable(table5Id);
-      hideTable(table6Id);
+      hideTableFinal();
+
     } else {
       $("select[id='selector'] option[name='TUS']").removeClass('hidden');
       
@@ -560,14 +785,142 @@ $("select[name='NameUni']").change(function() {
   $("select[name='NameUni']").change(function() {
     if ($(this).val() !== "IUV") {
       $("select[id='selector'] option[name='IUV']").addClass('hidden');
-      hideTable(table1Id);
-      hideTable(table2Id);
-      hideTable(table3Id);
-      hideTable(table4Id);
-      hideTable(table5Id);
-      hideTable(table6Id);
+      hideTableFinal();
+
     } else {
       $("select[id='selector'] option[name='IUV']").removeClass('hidden');
       
     }
   });
+
+  //Технически университет Габрово
+
+  $("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "TUG") {
+      $("select[id='selector'] option[name='TUG']").addClass('hidden');
+      hideTableFinal();
+    } else {
+      $("select[id='selector'] option[name='TUG']").removeClass('hidden');
+      
+    }
+  });
+  //Медицински Университет Плевен
+  $("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "MUP") {
+      $("select[id='selector'] option[name='MUP']").addClass('hidden');
+      hideTableFinal();
+    } else {
+      $("select[id='selector'] option[name='MUP']").removeClass('hidden');
+      
+    }
+  });
+  //Велико Търновски Университет
+  $("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "VU") {
+      $("select[id='selector'] option[name='VU']").addClass('hidden');
+      hideTableFinal();
+    } else {
+      $("select[id='selector'] option[name='VU']").removeClass('hidden');
+      
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+/*
+  $("select[name='selector']").change(function() {
+    if ($(this).id() !== "MUP1") {
+      $("id='MUPprom'").addClass('hidden');
+      hideTableFinal();
+    } else {
+      $("id='MUPprom'").removeClass('hidden');
+      
+    }
+  });
+
+*/
+  const yearSelector = document.getElementById('year');
+  const klasiraneSelector = document.getElementById('klasirane');
+  const resultBalManElement = document.getElementById('resultBalMan');
+  const resultBalWomanElement = document.getElementById('resultBalWoman');
+  let alert1 = "Върнете се на предишно класиране";
+
+  let BalMU2022 = [37.00, 35.40, 34.83, 32.88, 32.37, 32.25, 33.72, 31.20, 28.80, 26.74, alert1, alert1];
+
+  klasiraneSelector.addEventListener('change', updateResult);
+
+  function updateResult() {
+    const yearValue = yearSelector.value;
+    const klasiraneValue = klasiraneSelector.value;
+
+    let resultbalM = 'Мъже = ';
+    let resultbalW = 'Жени = ';
+    
+
+    if (yearValue === '2022') {
+      switch (klasiraneValue) {
+        case 'I':
+          resultbalM += BalMU2022[6].toString();
+          resultbalW += BalMU2022[0].toString();
+          break;
+        case 'II':
+          resultbalM += BalMU2022[7].toString();
+          resultbalW += BalMU2022[1].toString();
+          break;
+        case 'III':
+          resultbalM += BalMU2022[8].toString();
+          resultbalW += BalMU2022[2].toString();
+          break;
+        case 'IV':
+          resultbalM += BalMU2022[9].toString();
+          resultbalW += BalMU2022[3].toString();
+          break;
+        case 'V':
+          resultbalM += BalMU2022[10].toString();
+          resultbalW += BalMU2022[4].toString();
+          break;
+        case 'VI':
+          resultbalM += BalMU2022[11].toString();
+          resultbalW += BalMU2022[5].toString();
+          break;
+        default:
+          resultbal = '';
+      }
+    
+    } else if (yearValue === '2021') {
+      switch (klasiraneValue) {
+        case 'I':
+          resultbal = '11';
+          break;
+        case 'II':
+          resultbal = '12';
+          break;
+        case 'III':
+          resultbal = '13';
+          break;
+        case 'IV':
+          resultbal = '14';
+          break;
+        case 'V':
+          resultbal = '15';
+          break;
+        case 'VI':
+          resultbal = '16';
+          break;
+        default:
+          resultbal = '';
+      }
+    
+    }
+    resultBalManElement.textContent = resultbalM;
+    resultBalWomanElement.textContent = resultbalW;
+  }
+
+  
