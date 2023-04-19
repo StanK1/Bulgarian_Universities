@@ -7,6 +7,7 @@ const tableIUVId = "#tIUV";
 const tableTUG1Id = "#tTUG1";
 const tableTUG2Id = "#tTUG2";
 const tableMUPId = "#tMUP";
+const tableSUFMIId = "#tSUFMI";
 //---------------------------------------------
 const MUPprom = "#MUPprom";
 
@@ -51,12 +52,14 @@ function getTableIdForSelectedSpec(option) {
             return tableTUG2Id;
         case 'MUP':
             return tableMUPId;
+        case 'SUFMI':
+            return tableSUFMIId;
     }
 }
 
 function emptyInputs() {
     $('input[type=text]').val('');
-    $('input[type=text]').css('border', '1px solid #000000');
+    $('input[type=text]').css('border', '1px solid rgb(255, 255, 255)');
     $('#result').text('');
 }
 
@@ -75,6 +78,7 @@ function showCalc() {
     hideTable(tableTUG1Id);
     hideTable(tableTUG2Id);
     hideTable(tableMUPId);
+    hideTable(tableSUFMIId);
     hideResult();
 
 
@@ -113,6 +117,10 @@ function showCalc() {
             break;
         case 'MUP':
             showTable(tableMUPId);
+            showResult();
+            break;
+        case 'SUFMI':
+            showTable(tableSUFMIId);
             showResult();
             break;
     }
@@ -203,8 +211,17 @@ function getInputs() {
         };
         return data;
     }
+    if (option == 'SUFMI') {
 
-    return data;
+        data = {
+            group1: $(tableSUFMIId + ' .group1 input').map((_, el) => el.value).get(),
+            group2: $(tableSUFMIId + ' .group2 input').map((_, el) => el.value).get(),
+            group3: $(tableSUFMIId + ' .group3 input').map((_, el) => el.value).get()
+        };
+        return data;
+    }
+
+    //return data;
 
 }
 
@@ -243,7 +260,7 @@ function areDegreesValid(inputs) {
             let groupEl = inputs[group][i];
             let option = getSpecselectorValue();
             let tableId = getTableIdForSelectedSpec(option);
-            $(tableId + ' .' + group + ' input').eq(i).css('border', '1px solid #000000');
+            $(tableId + ' .' + group + ' input').eq(i).css('border', '1px solid #FFFFFF)');
             if (!isValidDegree(groupEl)) {
                 // Red color to not valid inputs
                 $(tableId + ' .' + group + ' input').eq(i).css('border', '1px solid #ff0000');
@@ -623,6 +640,7 @@ function makeCalculation(inputs) {
             }
             break;
          }
+        
          case 'MUP': {
 
                 if (group == 'group1') {
@@ -668,6 +686,55 @@ function makeCalculation(inputs) {
                 }
                 break;
             }
+             case 'SUFMI':{
+
+                if (group == 'group1') {
+    
+                    let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                    marks.forEach((element, index) => {
+                        if (index == 3 && !isNaN(element)) {
+                            marks[index] = element * 2.5;
+                        } else if (index == 1 && !isNaN(element)) {
+                            marks[index] = element * 3;
+                        }
+                        else if (index == 2 && !isNaN(element)) {
+                            marks[index] = element * 2.75;
+                        }
+                        else(!isNaN(element))
+                            marks[index] = element * 3.25;
+                        
+                    });
+                    let groupMax = Math.max.apply(null, marks);
+    
+                    if (isNaN(groupMax)) {
+                        finalResult += ' + 0.00';
+                    } else {
+                        finalResult += ' + ' + groupMax.toFixed(2);
+                        total += groupMax;
+                    }
+    
+                } else (group == 'group2') 
+    
+                    let marks = inputs[group].map(i => i == '' ? 0 : parseFloat(i));
+                    marks.forEach((element, index) => {
+                        if (!isNaN(element)) {
+                            marks[index] = element * 3;
+                            
+                        }
+                    });
+                    let groupMax = Math.max.apply(null, marks);
+    
+                    if (isNaN(groupMax)) {
+                        finalResult += ' + 0.00';
+                    } else {
+                        finalResult += ' + ' + groupMax.toFixed(2);
+                        total += groupMax;
+                    
+                }
+                
+            }
+            
+            
         }
 
     }
@@ -685,7 +752,7 @@ function calc() {
 
     if (valid) {
         let result = makeCalculation(data);
-        let color = '#000000';
+        let color = '#FFFFFF';
         showFinalResult(result, color);
     }
 }
@@ -766,8 +833,20 @@ $("select[name='NameCity']").change(function() {
       hideTable(tableTUG1Id);
       hideTable(tableTUG2Id);
       hideTable(tableMUPId);
+      hideTable(tableSUFMIId);
   }
 
+//Софйиски Университет
+$("select[name='NameUni']").change(function() {
+    if ($(this).val() !== "SUFMI") {
+      $("select[id='selector'] option[name='SUFMI']").addClass('hidden');
+      hideTableFinal();
+
+    } else {
+      $("select[id='selector'] option[name='SUFMI']").removeClass('hidden');
+      
+    }
+  });
 
 //Технически Универстет София
 $("select[name='NameUni']").change(function() {
