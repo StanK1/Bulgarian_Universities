@@ -1,71 +1,308 @@
----
-layout: gradove
-title: Варна
----
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Bulgarian Uni</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
 
-<section class="dark">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/cities.css" rel="stylesheet">
+
+</head>
+
+<body style="background: #110f16;">
+
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="../index.html" class="logo me-auto me-lg-0"><img src="../assets/img/favicon.png" alt="" class="img-fluid"></a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="../index.html" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Начало</a></li>
+          <li><a class="nav-link scrollto" style="font-family:Verdana, Geneva, Tahoma, sans-serif" href="../index.html#about">Относно</a></li>
+          <li><a class="nav-link scrollto" style="font-family:Verdana, Geneva, Tahoma, sans-serif" href="../index.php">Специалности</a></li>
+          <li><a class="nav-link scrollto" style="font-family:Verdana, Geneva, Tahoma, sans-serif" href="../index.html#gallery">Галерия</a></li>
+          <li class="dropdown" style="font-family:Verdana, Geneva, Tahoma, sans-serif"><a href="../index.html#"><span>Градове</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="sofia.html" >София</a></li>
+              <li><a href="plovdiv.html">Пловдив</a></li>
+              <li><a href="varna.html">Варна</a></li>
+              <li class="dropdown"><a href="#"><span>Други...</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="blagoevgrad.html">Благоевград</a></li>
+                  <li><a href="burgas.html">Бургас</a></li>
+                  <li><a href="veliko_tarnovo.html">Велико Търново</a></li>
+                  <li><a href="gabrovo.html">Габрово</a></li>
+                  <li><a href="pernik.html">Перник</a></li>
+                  <li><a href="pleven.html">Плевен</a></li>
+                  <li><a href="ruse.html">Русе</a></li>
+                  <li><a href="svishtov.html">Свищов</a></li>
+                  <li><a href="starazagora.html">Стара Загора</a></li>
+                  <li><a href="shumen.html">Шумен</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#footer" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Контакти</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+
+      <a href="../calculator.html" class="get-started-btn scrollto" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Калкулатор на бал</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs" style="background: #110f16;">
+      <div class="container">
+
+ 
+             <div class="col-md-4 offset-md-4" id="sublinks">
+             <ol>
+            <li><a href="../index.html">Начало</a></li>
+            <li>Варна</li>
+           </ol>
+       </div>
+    </div>
+</div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+    <section class="dark">
 	<div class="container py-4">
         <h1 class="h1 text-center" id="pageHeaderTitle">Варна</h1>
         <article class="postcard dark blue">
-{% include Cards.html 
-    imageUni="https://upload.wikimedia.org/wikipedia/commons/d/dc/VFU1.JPG" 
-    linkUni="https://www.ue-varna.bg"
-    UniName="Варненски свободен университет „Черноризец Храбър“"
-    description="В своята 100-годишна история Икономически университет – Варна е подготвил над 155 хиляди икономисти, сред които много чужди граждани на повече от 60 страни, реализирали се успешно у нас и в чужбина. Той е един от основните стълбове на икономическото образование и наука в страната, който се развива като предприемаческа и социално отговорна институция. Днес в него се обучават над 7 500 български и чуждестранни студенти. Подготвят ги над 230 редовни преподаватели, над 100 от които са хабилитирани. Те са креативни и с постоянно научно израстване – над 40% от тях имат собствен бизнес или консултират такъв с експертния и научния си потенциал."
-    paymentUni= "Частен"
-    typeOfUni = "Диплома"
-   %}
+
+    
+        <a class="postcard__img_link" href="https://www.ue-varna.bg">
+            <img class="postcard__img" src="https://upload.wikimedia.org/wikipedia/commons/d/dc/VFU1.JPG" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+            <h1 class="postcard__title blue"><a href="https://www.ue-varna.bg">Варненски свободен университет „Черноризец Храбър“</a></h1>
+            <div class="postcard__subtitle small">
+                
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">В своята 100-годишна история Икономически университет – Варна е подготвил над 155 хиляди икономисти, сред които много чужди граждани на повече от 60 страни, реализирали се успешно у нас и в чужбина. Той е един от основните стълбове на икономическото образование и наука в страната, който се развива като предприемаческа и социално отговорна институция. Днес в него се обучават над 7 500 български и чуждестранни студенти. Подготвят ги над 230 редовни преподаватели, над 100 от които са хабилитирани. Те са креативни и с постоянно научно израстване – над 40% от тях имат собствен бизнес или консултират такъв с експертния и научния си потенциал.</div>
+            <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Частен</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>Диплома</li>
+                <li class="tag__item play blue">
+                    <a href="https://www.ue-varna.bg"><i class="fas fa-play mr-2"></i>Към страницата</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
 </article>
 
 <div class="container py-4">
     <article class="postcard dark red">
-{% include Cards.html 
-    imageUni="https://e-learn.ue-varna.bg/pluginfile.php/1/theme_moove/sliderimage1/1680793852/parade-entry-building.jpg" 
-    linkUni="https://www.nbu.bg"
-    UniName="Икономически университет"
-    description="В своята 100-годишна история Икономически университет – Варна е подготвил над 155 хиляди икономисти, сред които много чужди граждани на повече от 60 страни, реализирали се успешно у нас и в чужбина. Той е един от основните стълбове на икономическото образование и наука в страната, който се развива като предприемаческа и социално отговорна институция. Днес в него се обучават над 7 500 български и чуждестранни студенти. Подготвят ги над 230 редовни преподаватели, над 100 от които са хабилитирани. Те са креативни и с постоянно научно израстване – над 40% от тях имат собствен бизнес или консултират такъв с експертния и научния си потенциал. "
-    paymentUni= "Държавен/Частен"
-    typeOfUni = "Диплома"
-   %}
+
+    
+        <a class="postcard__img_link" href="https://www.nbu.bg">
+            <img class="postcard__img" src="https://e-learn.ue-varna.bg/pluginfile.php/1/theme_moove/sliderimage1/1680793852/parade-entry-building.jpg" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+            <h1 class="postcard__title blue"><a href="https://www.nbu.bg">Икономически университет</a></h1>
+            <div class="postcard__subtitle small">
+                
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">В своята 100-годишна история Икономически университет – Варна е подготвил над 155 хиляди икономисти, сред които много чужди граждани на повече от 60 страни, реализирали се успешно у нас и в чужбина. Той е един от основните стълбове на икономическото образование и наука в страната, който се развива като предприемаческа и социално отговорна институция. Днес в него се обучават над 7 500 български и чуждестранни студенти. Подготвят ги над 230 редовни преподаватели, над 100 от които са хабилитирани. Те са креативни и с постоянно научно израстване – над 40% от тях имат собствен бизнес или консултират такъв с експертния и научния си потенциал. </div>
+            <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Държавен/Частен</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>Диплома</li>
+                <li class="tag__item play blue">
+                    <a href="https://www.nbu.bg"><i class="fas fa-play mr-2"></i>Към страницата</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
 </article>
 
    <div class="container py-4">
     <div id="pageHeaderTitle"></div>
     <article class="postcard dark yellow">
-    {% include Cards.html 
-        imageUni="https://mmc.bg/uploaded/projects/10_10_31_unnamed.jpg" 
-        linkUni="https://www.mu-varna.bg/BG"
-        UniName="Медицински университет „Професор доктор Параскев Стоянов“ Варна"
-        description="Медицински университет Варна – един от най-модерните и високотехнологични университети в страната! Привлекателната мултинационална среда, високотехнологичните методи и средства на преподаване, обучението в реална и симулационна среда, чудесните условия за спорт и рекреация в морската столица на България са само част от причините, поради които  в Медицински университет – Варна са избрали да учат студенти от близо 50 държави от целия свят! Варненският медицински университет е с над половинвековна история и традиции, но умело съчетава класическите модели на преподаване с най-модерните технологии и методи."
-        paymentUni= "Държавен"
-        typeOfUni = "Диплома"
-       %}
+    
+    
+        <a class="postcard__img_link" href="https://www.mu-varna.bg/BG">
+            <img class="postcard__img" src="https://mmc.bg/uploaded/projects/10_10_31_unnamed.jpg" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+            <h1 class="postcard__title blue"><a href="https://www.mu-varna.bg/BG">Медицински университет „Професор доктор Параскев Стоянов“ Варна</a></h1>
+            <div class="postcard__subtitle small">
+                
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">Медицински университет Варна – един от най-модерните и високотехнологични университети в страната! Привлекателната мултинационална среда, високотехнологичните методи и средства на преподаване, обучението в реална и симулационна среда, чудесните условия за спорт и рекреация в морската столица на България са само част от причините, поради които  в Медицински университет – Варна са избрали да учат студенти от близо 50 държави от целия свят! Варненският медицински университет е с над половинвековна история и традиции, но умело съчетава класическите модели на преподаване с най-модерните технологии и методи.</div>
+            <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Държавен</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>Диплома</li>
+                <li class="tag__item play blue">
+                    <a href="https://www.mu-varna.bg/BG"><i class="fas fa-play mr-2"></i>Към страницата</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
     </article>
 
     <div class="container py-4">
         <article class="postcard dark green">
-        {% include Cards.html 
-            imageUni="https://hilife.bg/uploads/news/05_hilife_haylayf___praznik_na_vissheto_voennomorsko_uchilishte_nikola_y_vaptsarov_varna.jpg" 
-            linkUni="http://www.naval-acad.bg"
-            UniName="Висше военноморско училище „Никола Вапцаров“"
-            description="Подготовка на висококвалифицирани специалисти за българските ВМС и морската индустрия и научно осигуряване на трансформацията на ВМС и развитието на морския сектор на Република България.Следдипломна квалификация на морски кадри; Провеждане на научни изследвания в интерес на трансформиращите се ВМС на Република България и морската индустрия."
-            paymentUni= "Държавен"
-            typeOfUni = "Военна служба"
-           %}
+        
+    
+        <a class="postcard__img_link" href="http://www.naval-acad.bg">
+            <img class="postcard__img" src="https://hilife.bg/uploads/news/05_hilife_haylayf___praznik_na_vissheto_voennomorsko_uchilishte_nikola_y_vaptsarov_varna.jpg" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+            <h1 class="postcard__title blue"><a href="http://www.naval-acad.bg">Висше военноморско училище „Никола Вапцаров“</a></h1>
+            <div class="postcard__subtitle small">
+                
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">Подготовка на висококвалифицирани специалисти за българските ВМС и морската индустрия и научно осигуряване на трансформацията на ВМС и развитието на морския сектор на Република България.Следдипломна квалификация на морски кадри; Провеждане на научни изследвания в интерес на трансформиращите се ВМС на Република България и морската индустрия.</div>
+            <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Държавен</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>Военна служба</li>
+                <li class="tag__item play blue">
+                    <a href="http://www.naval-acad.bg"><i class="fas fa-play mr-2"></i>Към страницата</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
         </article>
 
         <div class="container py-4">
             <div id="pageHeaderTitle"></div>
             <article class="postcard dark blue">
-            {% include Cards.html 
-                imageUni="https://static.bnr.bg/gallery/3c/3c827726c7b965034564d5058128f229.jpg" 
-                linkUni="http://www.tu-varna.bg"
-                UniName="Tехнически университет - Варна"
-                description="През годините на своето съществуване МЕИ-Варна от малък институт, подготвящ инженерни кадри с регионално значение, се превръща в Технически университет с национално значение, провеждащ обучение на студенти по 23 специалности. За 40-годишния период на дейност на ТУ-Варна са дипломирани 28976 специалисти с висше образование в областта на „Технически науки“, „Природни науки, математика и информатика“, „Социални, стопански и правни науки“ и „Педагогически науки в направление Техника и технологии“.
+            
+    
+        <a class="postcard__img_link" href="http://www.tu-varna.bg">
+            <img class="postcard__img" src="https://static.bnr.bg/gallery/3c/3c827726c7b965034564d5058128f229.jpg" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+            <h1 class="postcard__title blue"><a href="http://www.tu-varna.bg">Tехнически университет - Варна</a></h1>
+            <div class="postcard__subtitle small">
+                
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">През годините на своето съществуване МЕИ-Варна от малък институт, подготвящ инженерни кадри с регионално значение, се превръща в Технически университет с национално значение, провеждащ обучение на студенти по 23 специалности. За 40-годишния период на дейност на ТУ-Варна са дипломирани 28976 специалисти с висше образование в областта на „Технически науки“, „Природни науки, математика и информатика“, „Социални, стопански и правни науки“ и „Педагогически науки в направление Техника и технологии“.
 
-                60 години ТУ-ВАРНА"
-                paymentUni= "Държавен"
-                typeOfUni = "Диплома"
-               %}
+                60 години ТУ-ВАРНА</div>
+            <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Държавен</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>Диплома</li>
+                <li class="tag__item play blue">
+                    <a href="http://www.tu-varna.bg"><i class="fas fa-play mr-2"></i>Към страницата</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
             </article>
+    <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+      
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-info">
+                  <h3>Bulgarian<span>Uni</span></h3>
+                  <p>
+                    <strong>Phone:</strong> +359877084891<br>
+                    <strong>Email:</strong> stanislavkrstev8@gmail.com<br>
+                  </p>
+                  <div class="social-links mt-3">
+                    <a href="https://github.com/StanK1" class="github"><i class="bi-github"></i></a>
+                    <a href="https://www.instagram.com/skrivvio/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/stanislav-krastev-52615524a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Полезни линкове</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="../index.html#hero">Начало</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="../index.html#about">Относно</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="../index.php">Специалности</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="../index.html#gallery">Галерия</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="../calculator.html">Калкулатор</a></li>
+                </ul>
+              </div>
+              
+      
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Най-желани градове</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="sofia.html">София</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="plovdiv.html">Пловдив</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="varna.html">Варна</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="burgas.html">Бургас</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="starazagora.html">Стара Загора</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Най-желани Университети</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://www.uni-sofia.bg">Софийски университет "Св. Климент Охридски"</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://mu-sofia.bg">Медицински университет София</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://www.tu-sofia.bg">Технически университет София</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://uni-plovdiv.bg">Пловдивски университет "Паисий Хилендарски"</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://www.nbu.bg">Нов български университет</a></li>
+                </ul>
+              </div>
+            </div>
+      
+            
+          </div>
+        </div>
+        <div class="text-center">
+          <p><small>
+          </br>Моля, имайте предвид, че този списък се основава на броя на записаните и
+             не отразява непременно качеството на университетите. Винаги</br>
+             е добра идея да проучвате и сравнявате различни университети, за да намерите този, който най-добре отговаря на вашите нужди и цели.</small></p>
+        </div>
+      </footer>
+      
+      
+      
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+        <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+      
+      </body>
+      
+      </html>

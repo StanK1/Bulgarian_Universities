@@ -3,23 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Bulgarian Uni</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-
-
   <link href="assets/css/style.css" rel="stylesheet">
   
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <style>
             .wrapper {
@@ -28,67 +21,52 @@
   align-items: center;
   height: 90vh;
 }
-
 .table-container {
   margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 #searchResult {
   margin-top: 30px;
 }
-
 #tableWrapper {
   margin-top: 20px;
 }
-
 .table {
   width: 100%;
 }
-
 .table th,
 .table td {
   vertical-align: middle;
 }
-
 .table thead th {
   background-color: #343a40;
   color: #fff;
   font-weight: 500;
   text-align: center;
 }
-
 .table tbody td {
   text-align: center;
 }
-
           a:link {
   text-decoration: none;
 }
-
 a:visited {
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: none;
 }
-
 a:active {
   text-decoration: none;
 }
         </style>
 </head>
-
 <body id="body1">
 <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-lg-between">
-
       <h1 class="logo me-auto me-lg-0"><a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/favicon.png" alt="" class="img-fluid"></a></h1>
-
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto" href="index.html" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Начало</a></li>
@@ -120,15 +98,10 @@ a:active {
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-
-
       <a href="calculator.html" class="get-started-btn scrollto" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Калкулатор на бал</a>
-
     </div>
   </header>
-
   <main id="main">
-
   
  <div class="wrapper">
 	<div class="box">
@@ -143,10 +116,6 @@ a:active {
 </div>
 </div>
 <div id="searchResult"></div>
-
-
-
-
    
       
       
@@ -159,9 +128,7 @@ a:active {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-
  load_data();
-
  function load_data(query)
  {
   $.ajax({
@@ -188,11 +155,6 @@ $(document).ready(function(){
   }
  });
 });
-
-
-
-
-
 </script>
 </body>
 </html>
