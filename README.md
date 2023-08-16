@@ -11,11 +11,12 @@ A comprehensive resource for students interested in pursuing higher education in
 # Technologies
 This website is built using the following technologies:
 
--HTML
--CSS
+-HTML/CSS
 -JavaScript
--Java for web
--Databases
+-AJAX
+-JQeary
+-PHP
+-SQL
 # Usage
 Clone or download the repository
 Open index.html in your browser
@@ -25,4 +26,4 @@ Use the average point calculator to determine your eligibility for admission to 
 Contributing
 If you wish to contribute to this project, please fork the repository and make the desired changes to your fork. Once you are satisfied with your changes, please open a pull request and I will review it promptly.
 # OR 
-Check: https://stank1.github.io/Bulgarian_Universities/
+Check: [https://stank1.github.io/Bulgarian_Universities/](https://bulgarianuni.000webhostapp.com/index.html)https://bulgarianuni.000webhostapp.com/index.html
