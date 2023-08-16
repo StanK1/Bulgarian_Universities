@@ -26,4 +26,4 @@ Use the average point calculator to determine your eligibility for admission to 
 Contributing
 If you wish to contribute to this project, please fork the repository and make the desired changes to your fork. Once you are satisfied with your changes, please open a pull request and I will review it promptly.
 # OR 
-Check: [https://stank1.github.io/Bulgarian_Universities/](https://bulgarianuni.000webhostapp.com/index.html)https://bulgarianuni.000webhostapp.com/index.html
+Check: https://bulgarianuni.000webhostapp.com/index.html
